@@ -1,15 +1,16 @@
 {
   "product": "atlasqi-pdf",
-  "version": "0.9.3",
+  "version": "0.9.5",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v0.9.3/AtlasQI_PDF_Update_v0.9.3.zip",
-  "sha256": "5a504d819bf67fd39a6b94ef9d6c3cce7f1d3c3be0ee427fba12110b30417295",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v0.9.5/AtlasQI_PDF_Update_v0.9.5.zip",
+  "sha256": "feaef28f6951597bcd90364080880605b11905c430b3e527dbd25e33c239a07c",
   "release_notes": [
-    "Selo digital adaptativo para logos horizontais e quadradas",
-    "Espacamento revisado do selo",
-    "Validar no ITI no selo",
-    "Validador interno de assinaturas digitais"
+    "Abas para multiplos PDFs com estado isolado por documento",
+    "Impressao avancada com cor, papel, orientacao e escala",
+    "Propriedades nativas da impressora acessiveis pela caixa de impressao",
+    "Janelas de impressao e informacoes alinhadas as cores AtlasQI",
+    "Mantem os refinamentos de assinatura digital e ICP-Brasil da linha 0.9.4"
   ],
-  "published_at": "2026-08-23T14:05:25.1354908Z",
-  "minimum_supported_version": "0.9.0"
+  "published_at": "2026-08-23T19:16:37.168519+00:00",
+  "minimum_supported_version": "0.9.3"
 }
