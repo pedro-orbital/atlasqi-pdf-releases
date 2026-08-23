@@ -1,0 +1,13 @@
+name: Diagnostico Actions Publico
+
+on:
+  push:
+    paths:
+      - 'diagnostic-trigger.txt'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testar runner
+        run: echo "PUBLIC_ACTIONS_OK"
