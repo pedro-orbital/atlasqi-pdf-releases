@@ -1,110 +1,19 @@
-name: Publicar AtlasQI PDF v0.9.5 Beta - contingencia
+name: Diagnostico Actions Publico
 
 on:
   pull_request:
     branches: [main]
-    types: [synchronize]
+    types: [opened, synchronize]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  publish:
-    if: github.head_ref == 'diag-public-actions'
+  diagnostic:
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-      EXPECTED_SHA: feaef28f6951597bcd90364080880605b11905c430b3e527dbd25e33c239a07c
-      ASSET_NAME: AtlasQI_PDF_Update_v0.9.5.zip
     steps:
-      - name: Obter staging da versao
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-
-      - name: Montar e validar pacote
+      - name: Validar runner publico
         shell: bash
         run: |
           set -euo pipefail
-          test -f staging/v095/ready.txt
-          cat staging/v095/part-*.b64 | tr -d '\n\r' | base64 -d > "$ASSET_NAME"
-          echo "$EXPECTED_SHA  $ASSET_NAME" | sha256sum -c -
-          rm -rf /tmp/atlasqi-v095
-          mkdir -p /tmp/atlasqi-v095
-          unzip -q "$ASSET_NAME" -d /tmp/atlasqi-v095
-          test "$(tr -d '\r\n ' < /tmp/atlasqi-v095/VERSION.txt)" = "0.9.5"
-          python -m py_compile /tmp/atlasqi-v095/atlas_pdf.py /tmp/atlasqi-v095/pdf_core.py /tmp/atlasqi-v095/scripts/v095_features.py
-
-      - name: Publicar GitHub Release Beta
-        shell: bash
-        run: |
-          set -euo pipefail
-          if gh release view v0.9.5 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            gh release upload v0.9.5 "$ASSET_NAME" --clobber --repo "$GITHUB_REPOSITORY"
-          else
-            gh release create v0.9.5 "$ASSET_NAME" --repo "$GITHUB_REPOSITORY" \
-              --title "AtlasQI PDF v0.9.5 Beta" \
-              --notes $'Beta 0.9.5\n\n- Abas para multiplos PDFs com estado isolado por documento\n- Impressao avancada: cor, papel, orientacao, escala e propriedades da impressora\n- Janelas de impressao e informacoes alinhadas a identidade AtlasQI\n- Mantem os refinamentos de assinatura digital e ICP-Brasil da linha 0.9.4' \
-              --prerelease
-          fi
-
-      - name: Atualizar manifesto Beta
-        shell: python
-        run: |
-          import base64
-          import datetime
-          import json
-          import os
-          import urllib.request
-
-          repo = os.environ['GITHUB_REPOSITORY']
-          token = os.environ['GH_TOKEN']
-          expected_sha = os.environ['EXPECTED_SHA']
-          path = 'channels/beta/latest.json'
-          api = f'https://api.github.com/repos/{repo}/contents/{path}'
-          headers = {
-              'Authorization': f'Bearer {token}',
-              'Accept': 'application/vnd.github+json',
-              'X-GitHub-Api-Version': '2022-11-28',
-              'User-Agent': 'AtlasQI-PDF-Release',
-          }
-          req = urllib.request.Request(api + '?ref=main', headers=headers)
-          with urllib.request.urlopen(req, timeout=30) as response:
-              current = json.load(response)
-          manifest = {
-              'product': 'atlasqi-pdf',
-              'version': '0.9.5',
-              'channel': 'beta',
-              'download_url': f'https://github.com/{repo}/releases/download/v0.9.5/AtlasQI_PDF_Update_v0.9.5.zip',
-              'sha256': expected_sha,
-              'release_notes': [
-                  'Abas para multiplos PDFs com estado isolado por documento',
-                  'Impressao avancada com cor, papel, orientacao e escala',
-                  'Propriedades nativas da impressora acessiveis pela caixa de impressao',
-                  'Janelas de impressao e informacoes alinhadas as cores AtlasQI',
-                  'Mantem os refinamentos de assinatura digital e ICP-Brasil da linha 0.9.4',
-              ],
-              'published_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-              'minimum_supported_version': '0.9.3',
-          }
-          payload = {
-              'message': 'Publica AtlasQI PDF v0.9.5 no canal beta',
-              'content': base64.b64encode((json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode('utf-8')).decode('ascii'),
-              'sha': current['sha'],
-              'branch': 'main',
-          }
-          data = json.dumps(payload).encode('utf-8')
-          put = urllib.request.Request(api, data=data, method='PUT', headers={**headers, 'Content-Type': 'application/json'})
-          with urllib.request.urlopen(put, timeout=30) as response:
-              result = json.load(response)
-          print('MANIFEST_COMMIT=' + result['commit']['sha'])
-
-      - name: Verificar publicacao e integridade
-        shell: bash
-        run: |
-          set -euo pipefail
-          sleep 4
-          curl -fsSL "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/channels/beta/latest.json" -o /tmp/latest.json
-          grep -q '"version": "0.9.5"' /tmp/latest.json
-          curl -L --fail --retry 3 "https://github.com/$GITHUB_REPOSITORY/releases/download/v0.9.5/$ASSET_NAME" -o /tmp/verify.zip
-          echo "$EXPECTED_SHA  /tmp/verify.zip" | sha256sum -c -
+          echo "PUBLIC_ACTIONS_OK"
