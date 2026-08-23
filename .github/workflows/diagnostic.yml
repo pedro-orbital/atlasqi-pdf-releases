@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'diagnostic-trigger.txt'
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 permissions:
   contents: write
@@ -14,13 +17,3 @@ jobs:
     steps:
       - name: Testar runner
         run: echo "PUBLIC_ACTIONS_OK"
-
-      - name: Registrar resultado
-        shell: bash
-        run: |
-          echo "PUBLIC_ACTIONS_OK $(date -u +%Y-%m-%dT%H:%M:%SZ)" > diagnostic-result.txt
-          git config user.name "AtlasQI Actions"
-          git config user.email "actions@users.noreply.github.com"
-          git add diagnostic-result.txt
-          git commit -m "Registra diagnostico do Actions publico"
-          git push
