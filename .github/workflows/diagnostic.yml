@@ -5,9 +5,22 @@ on:
     paths:
       - 'diagnostic-trigger.txt'
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Testar runner
         run: echo "PUBLIC_ACTIONS_OK"
+
+      - name: Registrar resultado
+        shell: bash
+        run: |
+          echo "PUBLIC_ACTIONS_OK $(date -u +%Y-%m-%dT%H:%M:%SZ)" > diagnostic-result.txt
+          git config user.name "AtlasQI Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add diagnostic-result.txt
+          git commit -m "Registra diagnostico do Actions publico"
+          git push
