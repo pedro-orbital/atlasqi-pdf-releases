@@ -14,6 +14,17 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      SOURCE_CANDIDATE: ${{ secrets.ATLASQI_RELEASE_TOKEN }}
     steps:
-      - name: Testar runner
-        run: echo "PUBLIC_ACTIONS_OK"
+      - name: Testar runner e acesso privado
+        shell: bash
+        run: |
+          set -e
+          echo "PUBLIC_ACTIONS_OK"
+          if [ -z "$SOURCE_CANDIDATE" ]; then
+            echo "SOURCE_SECRET_MISSING"
+            exit 0
+          fi
+          code=$(curl -sS -o /tmp/repo.json -w "%{http_code}" -H "Authorization: Bearer $SOURCE_CANDIDATE" -H "Accept: application/vnd.github+json" https://api.github.com/repos/pedro-orbital/atlasqi-pdf)
+          echo "PRIVATE_SOURCE_HTTP=$code"
