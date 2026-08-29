@@ -1,16 +1,25 @@
 {
   "product": "atlasqi-pdf",
-  "version": "0.9.5",
+  "version": "0.9.8",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v0.9.5/AtlasQI_PDF_Update_v0.9.5.zip",
-  "sha256": "feaef28f6951597bcd90364080880605b11905c430b3e527dbd25e33c239a07c",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v0.9.8/AtlasQI_PDF_Update_v0.9.8.zip",
+  "sha256": "d1492aaf1a62aa913c417de2041c2708c0b94d05fa40d1502c9afb31b82af831",
   "release_notes": [
-    "Abas para multiplos PDFs com estado isolado por documento",
-    "Impressao avancada com cor, papel, orientacao e escala",
-    "Propriedades nativas da impressora acessiveis pela caixa de impressao",
-    "Janelas de impressao e informacoes alinhadas as cores AtlasQI",
-    "Mantem os refinamentos de assinatura digital e ICP-Brasil da linha 0.9.4"
+    "identidade visual dedicada do produto AtlasQI PDF ajustada para o padrão vermelho solicitado nos ícones do aplicativo e dos arquivos PDF, preservando a marca mestre AtlasQI sem alteração;",
+    "identidade do Windows consolidada em `AtlasQI-PDF.exe`, eliminando `Python` como handler persistente de `.pdf`;",
+    "ProgId atual passa a ser versionado dinamicamente e os ProgIds AtlasQI legados são reescritos para o launcher nativo, evitando regressão após atualização;",
+    "registro em Aplicativos padrão, Abrir com, AppUserModelID, atalhos, Menu Iniciar e menu de contexto unificado pela identidade nativa;",
+    "ícone do aplicativo e ícone dos arquivos PDF continuam distintos; o arquivo PDF usa ativo dedicado e caminho versionado/hash para vencer cache do Explorer;",
+    "adicionada sanitização técnica dos ativos de marca para remover fundos/cantos pretos ou brancos conectados às bordas sem redesenhar o símbolo oficial;",
+    "geração multi-resolução dos ICOs validada para 16, 20, 24, 32, 40, 48, 64, 128 e 256 px;",
+    "instalador consolidado persiste os componentes de identidade nativa para reparos e atualizações futuras;",
+    "atualizador automático passa pelo instalador consolidado, preserva `AtlasQI-PDF.exe` no rollback e valida que nenhum ProgId AtlasQI voltou a apontar para `pythonw.exe`;",
+    "`Abrir com`, criação de atalhos e fluxo de recuperação deixaram de registrar Python diretamente;",
+    "desinstalador remove todos os ProgIds nativos versionados do AtlasQI PDF;",
+    "execução Windows e build EXE passam pelo bootstrap de instância única, preservando abertura no primeiro duplo clique;",
+    "homologação Windows ampliada para validar associação `.pdf`, launcher nativo, cantos transparentes do ícone, cache-busting, rollback e regressões de identidade;",
+    "adicionados contratos automatizados para impedir retorno do handler Python e das bordas opacas em futuras versões."
   ],
-  "published_at": "2026-08-23T19:16:37.168519+00:00",
+  "published_at": "2026-08-29T20:19:58.3381617Z",
   "minimum_supported_version": "0.9.3"
 }
