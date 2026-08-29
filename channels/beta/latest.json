@@ -3,7 +3,7 @@
   "version": "0.9.8",
   "channel": "beta",
   "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v0.9.8/AtlasQI_PDF_Update_v0.9.8.zip",
-  "sha256": "d1492aaf1a62aa913c417de2041c2708c0b94d05fa40d1502c9afb31b82af831",
+  "sha256": "94499f8821f0ac4686dcda98b0ead6a85cd3642ae4993162dae22b31bf0fc268",
   "release_notes": [
     "identidade visual dedicada do produto AtlasQI PDF ajustada para o padrão vermelho solicitado nos ícones do aplicativo e dos arquivos PDF, preservando a marca mestre AtlasQI sem alteração;",
     "identidade do Windows consolidada em `AtlasQI-PDF.exe`, eliminando `Python` como handler persistente de `.pdf`;",
@@ -20,6 +20,6 @@
     "homologação Windows ampliada para validar associação `.pdf`, launcher nativo, cantos transparentes do ícone, cache-busting, rollback e regressões de identidade;",
     "adicionados contratos automatizados para impedir retorno do handler Python e das bordas opacas em futuras versões."
   ],
-  "published_at": "2026-08-29T20:19:58.3381617Z",
+  "published_at": "2026-08-29T22:13:19.7006391Z",
   "minimum_supported_version": "0.9.3"
 }
