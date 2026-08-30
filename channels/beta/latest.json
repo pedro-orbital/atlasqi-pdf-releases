@@ -1,18 +1,10 @@
 {
   "product": "atlasqi-pdf",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.3/AtlasQI_PDF_Update_v1.4.3.zip",
-  "sha256": "59cbaa20028164925b02971746f1e280ddea782497b462974925f6efbc796903",
-  "release_notes": [
-    "o arquivo aprovado pelo usuário para representar PDFs passa a ser a fonte técnica oficial do ícone de arquivo;",
-    "a geração do `.ico` não deriva mais de nenhum ICO histórico do repositório: a arte aprovada fica incorporada no runtime de branding com SHA-256 fixado;",
-    "o desenho visível é expandido para ocupar praticamente todo o canvas e validado em todas as resoluções críticas do Windows, inclusive 16, 20, 24, 32, 48 e 256 px;",
-    "os testes agora falham se qualquer frame do ícone ficar novamente reduzido dentro do próprio canvas;",
-    "mantida a limpeza agressiva do cache do Explorer e o ProgId versionado para impedir reaproveitamento do ícone anterior;",
-    "o workflow de release deixou de apontar para um ZIP antigo fixo e passa a publicar como artefato o pacote efetivamente gerado pela versão atual;",
-    "pacote permanece no canal Beta até confirmação visual no Windows."
-  ],
-  "published_at": "2026-08-30T20:19:54.5814279Z",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.4/AtlasQI_PDF_Update_v1.4.4.zip",
+  "sha256": "c5a9a6c95c700976b040c0a2fed65c69bfd95ab10b58fbaeaccd22fb48a5a8ee",
+  "release_notes": "AtlasQI PDF v1.4.4",
+  "published_at": "2026-08-30T20:33:38.6111412Z",
   "minimum_supported_version": "0.9.3"
 }
