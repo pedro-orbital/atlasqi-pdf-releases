@@ -1,20 +1,17 @@
 {
   "product": "atlasqi-pdf",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.0/AtlasQI_PDF_Update_v1.4.0.zip",
-  "sha256": "5f5cbc8b561751d5c02ae5cebc7c40beff9199c53270023cc1fcd063374d820c",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.1/AtlasQI_PDF_Update_v1.4.1.zip",
+  "sha256": "7e4785852618fb772e23c17a09ffd349ae1ac4876a55bdff0315eb8feecf21c2",
   "release_notes": [
-    "nova Home desktop promovida para a entrada principal da aplicação no canal Beta;",
-    "nova sidebar, cabeçalho, ação principal, drop-zone, grade 4×2 de ferramentas e área de Recentes;",
-    "biblioteca própria da Home V2 com 26 ícones SVG independentes em padrão graphite + vermelho;",
-    "runtime da Home consome diretamente a biblioteca SVG dedicada, evitando regressão visual para os ícones legados azuis;",
-    "comando `Validar assinatura` ligado ao validador interno existente;",
-    "Recentes com busca, filtro de arquivos existentes, alternância de densidade e ações dedicadas;",
-    "pipeline Windows validando geração dos 26 SVGs, contratos da Home V2, renderização dos ícones e versão;",
-    "pacote Beta 1.4 preparado para instalação controlada e homologação visual no Windows em 100%, 125% e 150%;",
-    "governança reforçada com `CURRENT_STATUS.md` como checkpoint obrigatório antes de qualquer retomada ou resposta de andamento."
+    "removido o símbolo que ocupava o topo da sidebar acima de `Início`;",
+    "navegação lateral reposicionada para começar junto ao topo, eliminando o espaço morto apontado na revisão visual;",
+    "ícone dedicado dos arquivos PDF no Windows Explorer passa por recorte dos pixels técnicos de baixa opacidade e ampliação proporcional da arte visível antes da geração multi-resolução;",
+    "preservada a identidade vermelha específica do AtlasQI PDF e a separação entre o ícone do aplicativo e o ícone dos arquivos `.pdf`;",
+    "adicionados contratos automáticos para impedir regressão do ícone minúsculo no Explorer e do espaço superior da sidebar;",
+    "pacote permanece no canal Beta até homologação visual/funcional no Windows."
   ],
-  "published_at": "2026-08-30T15:50:35.8948035Z",
+  "published_at": "2026-08-30T19:22:52.8894215Z",
   "minimum_supported_version": "0.9.3"
 }
