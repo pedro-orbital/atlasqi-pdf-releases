@@ -1,17 +1,18 @@
 {
   "product": "atlasqi-pdf",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.1/AtlasQI_PDF_Update_v1.4.1.zip",
-  "sha256": "7e4785852618fb772e23c17a09ffd349ae1ac4876a55bdff0315eb8feecf21c2",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.2/AtlasQI_PDF_Update_v1.4.2.zip",
+  "sha256": "4b0909b102649bedb3f67c23294fbf66965a4e433dc783557e97b9bcc8f9f6a6",
   "release_notes": [
-    "removido o símbolo que ocupava o topo da sidebar acima de `Início`;",
-    "navegação lateral reposicionada para começar junto ao topo, eliminando o espaço morto apontado na revisão visual;",
-    "ícone dedicado dos arquivos PDF no Windows Explorer passa por recorte dos pixels técnicos de baixa opacidade e ampliação proporcional da arte visível antes da geração multi-resolução;",
-    "preservada a identidade vermelha específica do AtlasQI PDF e a separação entre o ícone do aplicativo e o ícone dos arquivos `.pdf`;",
-    "adicionados contratos automáticos para impedir regressão do ícone minúsculo no Explorer e do espaço superior da sidebar;",
-    "pacote permanece no canal Beta até homologação visual/funcional no Windows."
+    "o instalador agora encerra instâncias antigas do AtlasQI PDF antes de substituir os arquivos, evitando que a aplicação permaneça exibindo a Home anterior em memória;",
+    "após a instalação, o AtlasQI PDF força uma nova instância do runtime atualizado;",
+    "o cache de ícones do Windows Explorer é limpo de forma agressiva, com reinício do Explorer e remoção de `iconcache`/`thumbcache`, para impedir reaproveitamento do ícone anterior;",
+    "o ícone dedicado dos arquivos PDF passa a remover também o canvas branco/neutro conectado às bordas antes do recorte e redimensionamento;",
+    "a arte visível do ícone PDF passa a ocupar no mínimo 236 px do master de 256 px antes da geração das resoluções do Windows;",
+    "permanecem as correções da 1.4.1: retirada do símbolo acima de `Início` e menu lateral iniciado junto ao topo;",
+    "pacote permanece no canal Beta para homologação visual no Windows."
   ],
-  "published_at": "2026-08-30T19:22:52.8894215Z",
+  "published_at": "2026-08-30T20:00:03.5404616Z",
   "minimum_supported_version": "0.9.3"
 }
