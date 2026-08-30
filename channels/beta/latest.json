@@ -1,10 +1,17 @@
 {
   "product": "atlasqi-pdf",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.4/AtlasQI_PDF_Update_v1.4.4.zip",
-  "sha256": "c5a9a6c95c700976b040c0a2fed65c69bfd95ab10b58fbaeaccd22fb48a5a8ee",
-  "release_notes": "AtlasQI PDF v1.4.4",
-  "published_at": "2026-08-30T20:33:38.6111412Z",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.5/AtlasQI_PDF_Update_v1.4.5.zip",
+  "sha256": "e02b78306f36f4f62ca926460b98930c231d53e8dfeca834c3e4a037eec25adc",
+  "release_notes": [
+    "alterado somente o ícone exibido ao lado de `AtlasQI PDF` no cabeçalho da Home;",
+    "o cabeçalho passa a usar exatamente a mesma fonte técnica aprovada do ícone vermelho de arquivo PDF, com `PDF` e marca AQ em branco;",
+    "removida a dependência visual do antigo símbolo AQ com pequeno selo `PDF` nesse ponto da interface;",
+    "mantidos posição, texto, espaçamentos, sidebar, cards, Recentes e demais elementos da Home sem alterações;",
+    "preservada integralmente a correção da 1.4.4 que repara o ProgId realmente usado pelo Explorer e impede o retorno do ícone minúsculo dos arquivos `.pdf`;",
+    "pacote permanece no canal Beta para confirmação visual."
+  ],
+  "published_at": "2026-08-30T20:54:40.1147249Z",
   "minimum_supported_version": "0.9.3"
 }
