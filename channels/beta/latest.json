@@ -1,18 +1,18 @@
 {
   "product": "atlasqi-pdf",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.2/AtlasQI_PDF_Update_v1.4.2.zip",
-  "sha256": "4b0909b102649bedb3f67c23294fbf66965a4e433dc783557e97b9bcc8f9f6a6",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.3/AtlasQI_PDF_Update_v1.4.3.zip",
+  "sha256": "59cbaa20028164925b02971746f1e280ddea782497b462974925f6efbc796903",
   "release_notes": [
-    "o instalador agora encerra instâncias antigas do AtlasQI PDF antes de substituir os arquivos, evitando que a aplicação permaneça exibindo a Home anterior em memória;",
-    "após a instalação, o AtlasQI PDF força uma nova instância do runtime atualizado;",
-    "o cache de ícones do Windows Explorer é limpo de forma agressiva, com reinício do Explorer e remoção de `iconcache`/`thumbcache`, para impedir reaproveitamento do ícone anterior;",
-    "o ícone dedicado dos arquivos PDF passa a remover também o canvas branco/neutro conectado às bordas antes do recorte e redimensionamento;",
-    "a arte visível do ícone PDF passa a ocupar no mínimo 236 px do master de 256 px antes da geração das resoluções do Windows;",
-    "permanecem as correções da 1.4.1: retirada do símbolo acima de `Início` e menu lateral iniciado junto ao topo;",
-    "pacote permanece no canal Beta para homologação visual no Windows."
+    "o arquivo aprovado pelo usuário para representar PDFs passa a ser a fonte técnica oficial do ícone de arquivo;",
+    "a geração do `.ico` não deriva mais de nenhum ICO histórico do repositório: a arte aprovada fica incorporada no runtime de branding com SHA-256 fixado;",
+    "o desenho visível é expandido para ocupar praticamente todo o canvas e validado em todas as resoluções críticas do Windows, inclusive 16, 20, 24, 32, 48 e 256 px;",
+    "os testes agora falham se qualquer frame do ícone ficar novamente reduzido dentro do próprio canvas;",
+    "mantida a limpeza agressiva do cache do Explorer e o ProgId versionado para impedir reaproveitamento do ícone anterior;",
+    "o workflow de release deixou de apontar para um ZIP antigo fixo e passa a publicar como artefato o pacote efetivamente gerado pela versão atual;",
+    "pacote permanece no canal Beta até confirmação visual no Windows."
   ],
-  "published_at": "2026-08-30T20:00:03.5404616Z",
+  "published_at": "2026-08-30T20:19:54.5814279Z",
   "minimum_supported_version": "0.9.3"
 }
