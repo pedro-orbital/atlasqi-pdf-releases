@@ -3,7 +3,7 @@
   "version": "1.4.0",
   "channel": "beta",
   "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.0/AtlasQI_PDF_Update_v1.4.0.zip",
-  "sha256": "55674337b405e99251c092ca06645de254d5f961a3fda51051a7c48595d7b949",
+  "sha256": "5f5cbc8b561751d5c02ae5cebc7c40beff9199c53270023cc1fcd063374d820c",
   "release_notes": [
     "nova Home desktop promovida para a entrada principal da aplicação no canal Beta;",
     "nova sidebar, cabeçalho, ação principal, drop-zone, grade 4×2 de ferramentas e área de Recentes;",
@@ -15,6 +15,6 @@
     "pacote Beta 1.4 preparado para instalação controlada e homologação visual no Windows em 100%, 125% e 150%;",
     "governança reforçada com `CURRENT_STATUS.md` como checkpoint obrigatório antes de qualquer retomada ou resposta de andamento."
   ],
-  "published_at": "2026-08-30T15:48:13.5935361Z",
+  "published_at": "2026-08-30T15:50:35.8948035Z",
   "minimum_supported_version": "0.9.3"
 }
