@@ -1,10 +1,10 @@
 {
   "product": "atlasqi-pdf",
-  "version": "1.4.6",
+  "version": "1.4.39",
   "channel": "beta",
-  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.6/AtlasQI_PDF_Update_v1.4.6.zip",
-  "sha256": "ab185196d810503fb5807dbf44425ac369fa8bdde65a03d1f433428e2a298c43",
-  "release_notes": "AtlasQI PDF v1.4.6",
-  "published_at": "2026-08-30T21:14:07.5373005Z",
+  "download_url": "https://github.com/pedro-orbital/atlasqi-pdf-releases/releases/download/v1.4.39/AtlasQI_PDF_Update_v1.4.39.zip",
+  "sha256": "caf782c40dc53440b36b6578f9474cc76bd770cddfb32bd2dcdf66fc4741c7da",
+  "release_notes": "AtlasQI PDF v1.4.39",
+  "published_at": "2026-10-13T12:43:19.9716890Z",
   "minimum_supported_version": "0.9.3"
 }
